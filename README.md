@@ -5,7 +5,7 @@
 
 ## 코드 구성
 > ### human_lifelog_mil_pytorch
-> - 본 연구에서 사용한 모달 주요도를 추출하는 Multiple Instance Learning model의 structure과 그룹별 라이프로그 예측 모델 structure, 그 외에 실험에 필요한 기본적인 코드들이 있는 디렉토리입니다.
+>> 본 연구에서 사용한 모달 주요도를 추출하는 Multiple Instance Learning model의 structure과 그룹별 라이프로그 예측 모델 structure, 그 외에 실험에 필요한 기본적인 코드들이 있는 디렉토리입니다.
 >> #### FocalLoss.py
 >>>  - 본 연구에서 예측하는 라벨인 불균형이 있기 때문에, 불균형한 분류 문제에 도움이 되는 FocalLoss를 사용했습니다.  
 >>>  - https://github.com/AdeelH/pytorch-multi-class-focal-loss 에서 구현된 코드를 사용했습니다.  
