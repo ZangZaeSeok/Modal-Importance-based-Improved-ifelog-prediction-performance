@@ -199,7 +199,7 @@ class MILNet(torch.nn.Module):
         
         self_query = self.Ql(self_key)
         self_key = self.Kl(self_key)
-        att = torch.softmax((self_query.transpose(1, 2)@self_key / torch.sqrt(torch.tensor(9))), 1)
+        att = torch.softmax((self_query.transpose(1, 2)@self_key / torch.tensor(9)), 1)
         b = torch.mul(self_value, att)
         
         # return 전체에 대한 예측, 개별 센서별 예측, 개별 센서 value, 모달 주요도(어텐션 가중치)
