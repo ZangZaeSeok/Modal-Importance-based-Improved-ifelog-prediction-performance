@@ -36,4 +36,6 @@
 
 ## 데이터 시각화
 - 각 사용자 그룹 별 모달 중요도 시각화
+![modal importance](https://github.com/user-attachments/assets/e0c0f61a-d495-4d8b-9bf3-445239ae834a)
+
   
