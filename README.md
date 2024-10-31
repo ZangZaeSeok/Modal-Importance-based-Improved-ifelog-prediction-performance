@@ -13,18 +13,14 @@
 > 기존의 방식들은 다양한 특성을 가진 모든 유저들을 하나로 묶어, 일반화 과정에서 성능이 줄어드는 문제가 있었습니다. 반면 본 연구에서 제안하는 방법론은 비슷한 특성을 가지는 유저들을 묶어 학습시켜 성능을 향상시킬 수 있었습니다.
 
 ## 🌲Working Enviornment
-* Google Colab
 * Python Version : 3.7.13
-* numpy==1.21.6
-* pandas==1.3.5
-* tqdm==4.64.0
-* capstone==4.0.2
-* pefile==2021.9.3
-* tensorflow==2.8.0
-* keras==2.8.0
-* xgboost==0.90
-* gensim==3.6.0
-* sklearn==1.0.2
+* torch
+* seaborn
+* numpy
+* pandas
+
+## 🗃️Dataset
+* 2019년 유저 라이프로그 데이터셋: (https://nanum.etri.re.kr/share/schung1/ETRILifelogDataset2020?lang=ko_KR)[https://nanum.etri.re.kr/share/schung1/ETRILifelogDataset2020?lang=ko_KR]
 
 ## 코드 구성
 > ### human_lifelog_mil_pytorch
