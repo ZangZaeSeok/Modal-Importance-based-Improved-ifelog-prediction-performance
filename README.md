@@ -23,19 +23,21 @@
 * 2019년 유저 라이프로그 데이터셋: https://nanum.etri.re.kr/share/schung1/ETRILifelogDataset2020?lang=ko_KR
 
 ## 🗂️각 디렉토리별 설명
-human_lifelog_mil_pytorch: 
+**human_lifelog_mil_pytorch:**
 > 본 연구에서 사용한 모달 주요도를 추출하는 Multiple Instance Learning model의 structure과 그룹별 라이프로그 예측 모델 structure, 그 외에 실험에 필요한 기본적인 코드들이 있는 디렉토리입니다.
-  FocalLoss.py:
-  > 본 연구에서 예측하는 라벨인 불균형이 있기 때문에, 불균형한 분류 문제에 도움이 되는 FocalLoss를 사용(https://github.com/AdeelH/pytorch-multi-class-focal-loss 에서 구현된 코드를 사용)했습니다.
-  human_lifelog_mil_pytorch.py
-  > 멀티 모달 문제를 Multiple Instnace Learning 구조로 해결하게 해주는 코드입니다.  
-  human_lifelog_predictor.py:
-  > 각 그룹 맞춤 라이프로그 예측 모델 class가 있는 코드입니다.
-  modules.py:
-  > 본 연구에서는 길이가 매우 긴 시계열 데이터의 정보를 빠르고 잘 반영하는 Cuasal dilated Convolution(https://github.com/flaviagiammarino/usrl-mts-pytorch 에서 구현된 코드를 사용)을 인코더로 사용했습니다.
+>> **FocalLoss.py:**
+>>> 본 연구에서 예측하는 라벨인 불균형이 있기 때문에, 불균형한 분류 문제에 도움이 되는 FocalLoss를 사용(https://github.com/AdeelH/pytorch-multi-class-focal-loss 에서 구현된 코드를 사용)했습니다.
+>> **human_lifelog_mil_pytorch.py:**
+>>>멀티 모달 문제를 Multiple Instnace Learning 구조로 해결하게 해주는 코드입니다.  
+>>**human_lifelog_predictor.py:**
+>>>각 그룹 맞춤 라이프로그 예측 모델 class가 있는 코드입니다.
+>>**modules.py:**
+>>> 본 연구에서는 길이가 매우 긴 시계열 데이터의 정보를 빠르고 잘 반영하는 Cuasal dilated Convolution(https://github.com/flaviagiammarino/usrl-mts-pytorch 에서 구현된 코드를 사용)을 인코더로 사용했습니다.
+>>**utils.py:**
+>>> multi classification 문제에서 F1 score을 구하기 위해 따로 구현한 코드입니다.
 
-│  ├──utils.py: multi classification 문제에서 F1 score을 구하기 위해 따로 구현한 코드입니다.  
-├──preprocess: 2019년 유저 라이프로그 데이터셋을 입력가능하게 전처리해주는 코드들이 위치한 디렉토리입니다. 먼저 데이터셋을 다운받아야 합니다.
+**preprocess:**
+> 2019년 유저 라이프로그 데이터셋을 입력가능하게 전처리해주는 코드들이 위치한 디렉토리입니다. 먼저 데이터셋을 다운받아야 합니다.
 │  ├──Dataset Preprocessor.ipynb: 서로 다른 공간에서 측정된 각 라이프로그 모달리티의 정보를 한번에 입력받을 수 있게 DataFrame으로 변환해주는 전처리 코드입니다.
 │  ├──Tension 예측 데이터 전처리 코드.ipynb: 각 모달리티가 수집된 시점에 대응되는 라벨을 추출하는 코드입니다. 이 코드를 통해 각 유저의 각 시점에 대응되는 라벨을 수집할 수 있습니다.
 ├──modal_importance_extract: 2019년 유저 중 101번 사용자를 대상으로 MIL 모델을 적용하여 해당 유저의 각 모달 별 중요도를 추출하는 코드들이 있는 디렉토리입니다. 이 코드들을 기반으로 다른 유저들의 데이터에서도 정보를 추출할 수 있습니다.
