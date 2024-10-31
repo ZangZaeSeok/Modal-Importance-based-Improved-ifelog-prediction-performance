@@ -23,12 +23,17 @@
 * 2019년 유저 라이프로그 데이터셋: https://nanum.etri.re.kr/share/schung1/ETRILifelogDataset2020?lang=ko_KR
 
 ## 🗂️각 디렉토리별 설명
-```
-├──human_lifelog_mil_pytorch: 본 연구에서 사용한 모달 주요도를 추출하는 Multiple Instance Learning model의 structure과 그룹별 라이프로그 예측 모델 structure, 그 외에 실험에 필요한 기본적인 코드들이 있는 디렉토리입니다.
-│  ├──FocalLoss.py: 본 연구에서 예측하는 라벨인 불균형이 있기 때문에, 불균형한 분류 문제에 도움이 되는 FocalLoss를 사용(https://github.com/AdeelH/pytorch-multi-class-focal-loss 에서 구현된 코드를 사용)했습니다.
-│  ├──human_lifelog_mil_pytorch.py: 멀티 모달 문제를 Multiple Instnace Learning 구조로 해결하게 해주는 코드입니다.  
-│  ├──human_lifelog_predictor.py: 각 그룹 맞춤 라이프로그 예측 모델 class가 있는 코드입니다.
-│  ├──modules.py: 본 연구에서는 길이가 매우 긴 시계열 데이터의 정보를 빠르고 잘 반영하는 Cuasal dilated Convolution(https://github.com/flaviagiammarino/usrl-mts-pytorch 에서 구현된 코드를 사용)을 인코더로 사용했습니다.  
+human_lifelog_mil_pytorch: 
+> 본 연구에서 사용한 모달 주요도를 추출하는 Multiple Instance Learning model의 structure과 그룹별 라이프로그 예측 모델 structure, 그 외에 실험에 필요한 기본적인 코드들이 있는 디렉토리입니다.
+  FocalLoss.py:
+  > 본 연구에서 예측하는 라벨인 불균형이 있기 때문에, 불균형한 분류 문제에 도움이 되는 FocalLoss를 사용(https://github.com/AdeelH/pytorch-multi-class-focal-loss 에서 구현된 코드를 사용)했습니다.
+  human_lifelog_mil_pytorch.py
+  > 멀티 모달 문제를 Multiple Instnace Learning 구조로 해결하게 해주는 코드입니다.  
+  human_lifelog_predictor.py:
+  > 각 그룹 맞춤 라이프로그 예측 모델 class가 있는 코드입니다.
+  modules.py:
+  > 본 연구에서는 길이가 매우 긴 시계열 데이터의 정보를 빠르고 잘 반영하는 Cuasal dilated Convolution(https://github.com/flaviagiammarino/usrl-mts-pytorch 에서 구현된 코드를 사용)을 인코더로 사용했습니다.
+
 │  ├──utils.py: multi classification 문제에서 F1 score을 구하기 위해 따로 구현한 코드입니다.  
 ├──preprocess: 2019년 유저 라이프로그 데이터셋을 입력가능하게 전처리해주는 코드들이 위치한 디렉토리입니다. 먼저 데이터셋을 다운받아야 합니다.
 │  ├──Dataset Preprocessor.ipynb: 서로 다른 공간에서 측정된 각 라이프로그 모달리티의 정보를 한번에 입력받을 수 있게 DataFrame으로 변환해주는 전처리 코드입니다.
@@ -41,7 +46,7 @@
 │  ├──modal importance value based cluster_T-SNE.ipynb: 각 유저에 대해서 추출된 모달의 각 중요도들을 2차원으로 시각화 및 클루스터링을 수행합니다.
 ├──general_model
 │  ├──그룹 및 전체 데이터셋에 대한 tension 예측 코드.py: 만들어진 그룹을 통해 각 그룹별 Tension 라벨을 예측하는 모델을 학습시키는 코드와, 전체 데이터로 Tension 라벨을 예측하는 코드입니다.
-```
+
 
 ## 데이터 시각화 ([visualizing_clustering](https://github.com/ZangZaeSeok/Modal-Importance-based-Improved-lifelog-prediction-performance/tree/main/visualizing_clustering))
 > MIL을 적용하기 이전 각 유저의 raw data 시각화: **특징이 존재하지 않는 것**을 확인할 수 있습니다.
